@@ -4,8 +4,7 @@
     <application android:label="@string/app_name">
         <service android:name=".PluginService" android:exported="true">
             <intent-filter>
-                <action android:name="androidsrc.intent.action.PICK_PLUGIN" />
-                <category android:name="androidsrc.intent.category.MUL_PLUGIN" />
+                <action android:name="me.targa.intent.action.PLUGIN" />
             </intent-filter>
         </service>
     </application>

@@ -1,6 +1,8 @@
 package tv.playlis.plugin;
 
-import tv.playlis.plugin.IPluginService;
+import me.targa.playlistvplugin.Plugin;
+import me.targa.playlistvplugin.Resolver;
+
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
@@ -11,25 +13,25 @@ public class PluginService extends Service {
     @Override
     public IBinder onBind(Intent arg0) {
 
-        return new IPluginService.Stub() {
+        return new Plugin.Stub() {
             @Override
             public String getName() throws RemoteException {
-                return "GDrive Resolver";
+                return getString(R.string.plugin_name);
             }
 
             @Override
             public String getVersion() throws RemoteException {
-                return "1.0";
+                return getString(R.string.plugin_version);
             }
 
             @Override
             public String getAuthor() throws RemoteException {
-                return "Miguel Targa";
+                return getString(R.string.plugin_author);
             }
 
             @Override
             public String getSite() throws RemoteException {
-                return "http://targa.me";
+                return getString(R.string.plugin_site);
             }
 
             public Resolver resolveUrl(String url) throws RemoteException {
@@ -39,6 +41,16 @@ public class PluginService extends Service {
                 test.setUrl(url);
 
                 return test;
+            }
+
+            @Override
+            public void onActivation() throws RemoteException {
+
+            }
+
+            @Override
+            public void onDeactivation() throws RemoteException {
+
             }
         };
     }

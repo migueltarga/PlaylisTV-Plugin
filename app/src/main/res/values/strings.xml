@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PlaylisTV Plugin</string>
+    <string name="plugin_name">GDrive Resolver</string>
+    <string name="plugin_version">1.0</string>
+    <string name="plugin_author">Miguel Targa</string>
+    <string name="plugin_site">http://targa.me</string>
 </resources>

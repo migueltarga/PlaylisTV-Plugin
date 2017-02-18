@@ -1,4 +1,4 @@
-package tv.playlis.plugin;
+package me.targa.playlistvplugin;
 
 import android.os.Parcel;
 import android.os.Parcelable;
