@@ -1,3 +1,3 @@
 package me.targa.playlistvplugin;
 
-parcelable Resolver;
+parcelable Options;

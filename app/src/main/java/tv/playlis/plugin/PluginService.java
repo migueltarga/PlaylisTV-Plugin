@@ -5,6 +5,8 @@ import me.targa.playlistvplugin.Resolver;
 
 import android.app.Service;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.IBinder;
 import android.os.RemoteException;
 
@@ -32,6 +34,11 @@ public class PluginService extends Service {
             @Override
             public String getSite() throws RemoteException {
                 return getString(R.string.plugin_site);
+            }
+
+            @Override
+            public Bitmap getLogo() throws RemoteException {
+                return BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_puzzle);
             }
 
             public Resolver resolveUrl(String url) throws RemoteException {
