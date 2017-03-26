@@ -11,10 +11,6 @@ import android.graphics.BitmapFactory;
 import android.os.IBinder;
 import android.os.RemoteException;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
 public class PluginService extends Service {
     @Override
     public IBinder onBind(Intent arg0) {
