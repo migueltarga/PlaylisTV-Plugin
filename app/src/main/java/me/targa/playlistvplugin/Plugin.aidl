@@ -9,7 +9,8 @@ interface Plugin {
     String getAuthor();
     String getSite();
     Bitmap getLogo();
-    Resolver resolveUrl(String url);
+    boolean hasPreferences();
+    Resolver run(String url);
     void onActivation();
     void onDeactivation();
 }

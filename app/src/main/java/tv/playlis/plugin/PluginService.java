@@ -1,5 +1,6 @@
 package tv.playlis.plugin;
 
+import me.targa.playlistvplugin.Options;
 import me.targa.playlistvplugin.Plugin;
 import me.targa.playlistvplugin.Resolver;
 
@@ -9,6 +10,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.IBinder;
 import android.os.RemoteException;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class PluginService extends Service {
@@ -41,13 +45,21 @@ public class PluginService extends Service {
                 return BitmapFactory.decodeResource(getResources(), R.drawable.ic_action_puzzle);
             }
 
-            public Resolver resolveUrl(String url) throws RemoteException {
+            @Override
+            public boolean hasPreferences() throws RemoteException {
+                return true;
+            }
 
-                // TEST
-                Resolver test = new Resolver();
-                test.setUrl(url);
+            @Override
+            public Resolver run(String url) throws RemoteException {
+                Resolver data = new Resolver();
 
-                return test;
+                data.addOption(new Options("480p", "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"));
+                data.addOption(new Options("640p", "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"));
+                data.addOption(new Options("720p", "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"));
+                data.addOption(new Options("1080p", "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"));
+
+                return data;
             }
 
             @Override
