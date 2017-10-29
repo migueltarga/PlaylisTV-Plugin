@@ -1,2 +1,2 @@
 # PlaylisTV-Plugin
-PlaylisTV Plugin Demo
+PlaylisTV Plugin Demo.
